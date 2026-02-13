@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine's Day hazell kooo 💖</title>
+<style>
+    /* BODY & BACKGROUND */
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ffb6c1, #ffc1e3, #ff69b4);
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* GLASS CARD */
+    .card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        border-radius: 25px;
+        padding: 40px 30px;
+        width: 360px;
+        text-align: center;
+        box-shadow: 0 15px 50px rgba(255,105,180,0.3);
+        border: 1px solid rgba(255,255,255,0.3);
+        position: relative;
+        z-index: 2;
+        animation: floatCard 4s ease-in-out infinite;
+    }
+
+    /* HEADING */
+  
+
+    /* SWEET MESSAGE TYPING */
+    .message {
+        font-size: 18px;
+        color: #fff;
+        margin-top: 15px;
+        min-height: 50px;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid #fff;
+        width: 0;
+        font-weight: 500;
+        animation: typing 4s steps(60, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink {
+        50% { border-color: transparent; }
+    }
+
+    /* HEART ICON ANIMATION */
+    .heart {
+        font-size: 60px;
+        color: #ff4d6d;
+        animation: heartbeat 1s infinite;
+    }
+
+    @keyframes heartbeat {
+        0%, 50%, 100% { transform: scale(1); }
+        25%, 75% { transform: scale(1.2); }
+    }
+
+    /* FLOATING CARD */
+    @keyframes floatCard {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+
+    /* BUTTON STYLING */
+    button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255,20,147,0.4);
+    }
+
+    button:hover {
+        transform: scale(1.1) rotate(-2deg);
+        box-shadow: 0 10px 25px rgba(255,20,147,0.5);
+    }
+
+    /* FADE IN */
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(20px);}
+        100% { opacity: 1; transform: translateY(0);}
+    }
+
+    /* FLOATING HEARTS */
+    .floating-heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        transform: rotate(45deg);
+        animation: floatHeart linear infinite;
+        border-radius: 5px;
+        z-index: 1;
+    }
+    .floating-heart::before,
+    .floating-heart::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: inherit;
+        border-radius: 50%;
+    }
+    .floating-heart::before { top: -10px; left: 0; }
+    .floating-heart::after { left: 10px; top: 0; }
+
+    @keyframes floatHeart {
+        0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+        100% { transform: translateY(-700px) rotate(45deg); opacity: 0; }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 400px){
+        .card { width: 90%; padding: 30px 20px; }
+        h1 { font-size: 28px; }
+        .message { font-size: 16px; }
+        .heart { font-size: 50px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="heart">❤️</div>
+    <h1>Happy Valentine's Day babyyy 💕</h1>
+    
+    <button onclick="window.location.href='gallery.html'">pindot mo me hehe</button>
+</div>
+
+<!-- FLOATING HEARTS SCRIPT -->
+<script>
+    for(let i=0;i<35;i++){
+        let heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random()*6 + 4) + 's';
+        heart.style.width = heart.style.height = (Math.random()*25 + 10) + 'px';
+        heart.style.opacity = Math.random();
+        document.body.appendChild(heart);
+    }
+</script>
+
+</body>
+</html>
